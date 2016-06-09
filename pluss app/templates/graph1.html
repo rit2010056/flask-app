@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+	<head>
+<!-- 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="">
+ -->		<meta charset="utf-8">
+
+		<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+	      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	      <script src="../static/js/main.js"></script>`
+           <script src="http://code.highcharts.com/highcharts.js"></script>
+		<script src="../static/js/uber_input.js"></script>
+		<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+        <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+        <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+        <script>
+         $(function() {
+            $( "#datepicker-13" ).datepicker();
+            $( "#datepicker-14" ).datepicker();
+            // $( "#datepicker-13" ).datepicker("show");
+         });
+        </script>
+	</head>
+
+	<body>
+		<div id="content">
+        <form method="post" action="/" role ='form'>
+          <label for="yourname">Start Date: </label>
+          <input type="text" name="datepicker-13" id="datepicker-13">
+          <label for="youremail">End Date: </label>
+          <input type="text" name="datepicker-14" id="datepicker-14"></br>
+         <button id="btn" class="btn btn-lg btn-primary btn-block" type="button">Search</button>
+        </form>
+         </div>
+
+		<!-- <p>Start Date: <input type="text" name="datepicker-13" id="datepicker-13"></p> -->
+		<!-- <p>End Date: <input type="text" name='datepicker-14' id="datepicker-14"></p> -->
+		<!-- <button id="btn" class="btn btn-lg btn-primary btn-block" type="button">Search</button> -->
+		<div id={{ chartID|safe }} class="chart" style="height: 500px; width: 100%"></div>
+		<!-- <h1>{{ data|safe }}</h1> -->
+		<script>
+			 var chart_id = {{ chartID|safe }} 
+			 var chartData = {{ data|safe }}
+			
+		</script> 
+	    <!-- // <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> -->
+		
+	</body>
+</html>
